@@ -15,6 +15,9 @@ La API se Auto-documenta con las dependencias de Swagger
 - Postman: /springboot-servicio-producto/src/main/resources/productos.postman_collection.json
 
 
-
-
-
+> Subir Proyecto a GitHub:
+- git init
+- git add .
+- git commit -m "first commit"
+- git remote add origin https://github.com/canitanoa/springboot-servicio-producto.git
+- git push -u origin master
