@@ -11,7 +11,8 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8001/listar",
+					"raw": "http://localhost:8001/listar",
+					"protocol": "http",
 					"host": [
 						"localhost"
 					],
@@ -24,19 +25,20 @@
 			"response": []
 		},
 		{
-			"name": "ver",
+			"name": "ver/{id}",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8001/ver/10",
+					"raw": "http://localhost:8001/ver/9",
+					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8001",
 					"path": [
 						"ver",
-						"10"
+						"9"
 					]
 				}
 			},
