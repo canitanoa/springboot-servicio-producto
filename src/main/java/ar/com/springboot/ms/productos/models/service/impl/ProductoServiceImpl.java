@@ -29,4 +29,17 @@ public class ProductoServiceImpl implements ProductoService{
 		//.orElse(null) -> si no encuentra el objeto retorna null evitando salir por NoSuchElementException
 	}
 
+	@Override
+	@Transactional
+	public Producto save(Producto producto) {
+		return productoDao.save(producto);
+	}
+
+	@Override
+	@Transactional
+	public void deleteById(Long id) {
+
+		productoDao.deleteById(id);
+	}
+
 }
