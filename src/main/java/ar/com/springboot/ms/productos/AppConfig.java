@@ -2,6 +2,7 @@ package ar.com.springboot.ms.productos;
 
 import java.util.Collections;
 
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
@@ -18,6 +19,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration // Para crear las configuraciones
 @EnableSwagger2 // Para la Auto-Documentacion
 @EnableEurekaClient // Para que sea Cliente de Eureka y pueda registrarse en el server
+@EntityScan({"ar.com.springboot.ms.*"}) //Para escanear los pakage
 public class AppConfig {
 
 	// Definicion de Swagger

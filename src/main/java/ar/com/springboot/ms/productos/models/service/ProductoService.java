@@ -2,7 +2,9 @@ package ar.com.springboot.ms.productos.models.service;
 
 import java.util.List;
 
-import ar.com.springboot.ms.productos.models.entity.Producto;
+import ar.com.springboot.ms.commons.models.entity.Producto;
+
+//import ar.com.springboot.ms.productos.models.entity.Producto;
 
 public interface ProductoService {
 	

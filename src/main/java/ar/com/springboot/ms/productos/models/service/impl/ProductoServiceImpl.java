@@ -6,8 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import ar.com.springboot.ms.commons.models.entity.Producto;
 import ar.com.springboot.ms.productos.models.dao.ProductoDao;
-import ar.com.springboot.ms.productos.models.entity.Producto;
+//import ar.com.springboot.ms.productos.models.entity.Producto;
 import ar.com.springboot.ms.productos.models.service.ProductoService;
 
 @Service //IoC para utilizar en el Controller
@@ -38,7 +39,6 @@ public class ProductoServiceImpl implements ProductoService{
 	@Override
 	@Transactional
 	public void deleteById(Long id) {
-
 		productoDao.deleteById(id);
 	}
 
