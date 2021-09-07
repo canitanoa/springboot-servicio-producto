@@ -30,6 +30,10 @@ public class ProductoController {
 	// Para obtener valores de las properties
 	@Value("${server.port}")
 	private Integer port;
+	
+	// Para obtener valores de las properties
+	@Value("${eureka.instance.instance-id}")
+	private String instancia;
 
 	@Autowired
 	private ProductoService productoService;
@@ -58,6 +62,7 @@ public class ProductoController {
 		return productoService.findAll().stream().map(producto -> {
 //			producto.setPort(Integer.parseInt(environment.getProperty("local.server.port")));
 			producto.setPort(port);
+			producto.setInstancia(instancia);
 			return producto;
 		}).collect(Collectors.toList());
 
@@ -70,6 +75,7 @@ public class ProductoController {
 		Producto producto = productoService.findById(id);
 //		producto.setPort(Integer.parseInt(environment.getProperty("local.server.port")));
 		producto.setPort(port);
+		producto.setInstancia(instancia);
 
 		// Prueba con Hystrix, genero un error random
 //		Random rd = new Random();
