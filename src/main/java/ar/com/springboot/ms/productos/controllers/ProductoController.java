@@ -1,6 +1,7 @@
 package ar.com.springboot.ms.productos.controllers;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -77,19 +78,30 @@ public class ProductoController {
 		producto.setPort(port);
 		producto.setInstancia(instancia);
 
-		// Prueba con Hystrix, genero un error random
+//		/* Pruebas con Hystrix */
+//		// Genero un error random
 //		Random rd = new Random();
 //		if (rd.nextBoolean()) {
 //			throw new Exception("No se puede cargar el producto");
 //		}
-
-		// Prueba con Hystrix, genero un timeout
+//		// Genero un timeout
 //		try {
 //			Thread.sleep(2000L);
 //		} catch (InterruptedException e) {
 //			// TODO: handle exception
 //			e.printStackTrace();
 //		}
+		
+		/* Pruebas con Resilience4J */
+		// Tira error si el id = 9
+		if(id.equals(9L)) {
+			throw new IllegalStateException("Producto no encontrado.");
+		}
+		// Tarda 5 seg si el id = 7
+		if(id.equals(7L)) {
+			TimeUnit.SECONDS.sleep(5L);
+		}
+		
 
 		return producto;
 	}
